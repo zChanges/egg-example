@@ -40,7 +40,6 @@ module.exports = appInfo => {
     saltRounds: 10 // default 10
   }
 
-
   config.jwt = {
     secret: 'zChange',
     enable: true, // default is false
@@ -52,7 +51,7 @@ module.exports = appInfo => {
       ctx.body = {
         code: -1,
         success:false,
-        message: err.message
+        message: err.errors ? err.errors : err.message 
       };
       ctx.status = 200;
     }
@@ -62,9 +61,7 @@ module.exports = appInfo => {
   // config.bizerror = {
   //   breakDefault: false, // disable default error handler
   //   sendClientAllParams: false, // return error bizParams to user
-  //   interceptAllError: false, // handle all exception, not only bizError exception
-  // };
-
+  //   interceptAllError: false, // handle all excepy
   return config;
 };
 

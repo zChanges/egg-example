@@ -10,8 +10,8 @@ exports.validate = {
 }
 
 exports.mongoose = {
-    enable: true,
-    package: 'egg-mongoose',
+  enable: true,
+  package: 'egg-mongoose',
 }
 
 // 跨域

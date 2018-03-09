@@ -19,5 +19,4 @@ module.exports = app => {
   // router.put('/api/user/:id', controller.user.update)
   router.resources('user', '/api/user', app.jwt, controller.user)
 
-
 };
